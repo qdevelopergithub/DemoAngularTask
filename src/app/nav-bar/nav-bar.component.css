@@ -1,0 +1,110 @@
+.search-container {
+    display: flex;
+  }
+  
+  .search-input-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .search-input-container.active {
+    display: block;
+    transform: scaleY(1);
+  }
+  ::ng-deep .pi-search {
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    /* padding: 8px 16px; */
+    cursor: pointer;
+  }
+  /* Add transition effect to the input field */
+.search-container input {
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  /* Apply transformation when the search input is active */
+  .search-container.active input {
+    transform: scaleX(1);
+  }
+  ::ng-deep  .p-button.p-button-secondary {
+    border-radius: 46px !important;
+}
+::ng-deep  .p-button.p-button-success{
+    border-radius: 38px !important;
+    margin: 0px 10px !important;
+}
+img{
+    height: 46px;
+    border: 1px solid;
+    border-radius: 38px;
+    margin: 0px 5px;
+}
+::ng-deep .p-dialog{
+    width: 200px !important;
+}
+::ng-deep .p-dialog-mask {
+    /* position: fixed; */
+    top: -110px;
+}
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Basic styling for the dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style the trigger button */
+  .dropdown-btn {
+    border-radius: 33px;
+    padding: 10px;
+    background-color: #ef4444;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* Hide the dropdown content by default */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Style the dropdown links */
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* Change color on hover */
+  .dropdown-content a:hover {
+    /* background-color: #3498db; */
+    color: #fff;
+  }
+
+  /* Display the dropdown content when the trigger button is hovered */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

@@ -1,0 +1,56 @@
+.login-container {
+    max-width: 300px !important;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 100px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px !important;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px !important;
+    margin-bottom: 15px !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4caf50 !important;
+    color: white;
+    padding: 10px 15px !important;
+    border: none;
+    border-radius: 5px !important;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add some spacing between form elements */
+  .form-group {
+    margin-bottom: 20px !important;
+  }
+  
+  /* Add styles for error messages */
+  .error-message {
+    color: #ff0000 !important;
+    margin-top: 5px !important;
+  }
+  
+  ::ng-deep .p-ripple {
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    padding: 8px 16px !important;
+    cursor: pointer !important;
+  }

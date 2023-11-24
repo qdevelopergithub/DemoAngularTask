@@ -1,0 +1,98 @@
+<app-sidebar></app-sidebar>
+<app-nav-bar [name]="data"></app-nav-bar>
+<div class="content">
+  <div class="widget">
+    <p-card header="Facts" subheader="Click on button to generate random facts" [style]="{ width: '360px' }">
+      <ng-template pTemplate="header">
+        <p-button icon="pi pi-refresh" severity="danger" (click)="randomFacts()"></p-button>
+      </ng-template>
+      <p>
+        {{facts}}
+      </p>
+      <ng-template pTemplate="footer">
+      </ng-template>
+    </p-card>
+    <p-card header="Fill form" subheader="" [style]="{ width: '360px', height: '350px'}">
+      <div class="p-fluid">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="p-field">
+            <label for="name">Latitude</label>
+            <input class="form-control" id="Latitude" type="number" pInputText formControlName="Latitude"
+              (blur)="onInputBlur('Latitude')" />
+          </div>
+
+          <div class="p-field">
+            <label for="email">Longitude</label>
+            <input class="form-control" id="Longitude" type="number" pInputText formControlName="Longitude"
+              (blur)="onInputBlur('Longitude')" />
+          </div>
+          <div class="p-field">
+            <label for="email">Date</label>
+            <input class="form-control" id="Date" type="date" pInputText formControlName="Date"
+              (blur)="onInputBlur('Date')" />
+          </div>
+          <p-button label="Submit" [loading]="loading" (onClick)="load()"></p-button>
+        </form>
+
+      </div>
+
+    </p-card>
+
+    <p-card header="Output Data:" *ngIf="sunriseSunsetInfo"
+      [style]="{ width: '285px', height: '350px', overflow:'overlay' }">
+      <div class="p-fluid">
+        <div class="p-field">
+          <h3 for="astronomicalTwilightBegin">Astronomical Twilight Begin:</h3>
+          <p>{{ sunriseSunsetInfo.astronomical_twilight_begin }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="astronomicalTwilightEnd">Astronomical Twilight End:</h3>
+          <p>{{ sunriseSunsetInfo.astronomical_twilight_end }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="civilTwilightBegin">Civil Twilight Begin:</h3>
+          <p>{{ sunriseSunsetInfo.civil_twilight_begin }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="civilTwilightEnd">Civil Twilight End:</h3>
+          <p>{{ sunriseSunsetInfo.civil_twilight_end }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="dayLength">Day Length:</h3>
+          <p>{{ sunriseSunsetInfo.day_length }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="nauticalTwilightBegin">Nautical Twilight Begin:</h3>
+          <p>{{ sunriseSunsetInfo.nautical_twilight_begin }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="nauticalTwilightEnd">Nautical Twilight End:</h3>
+          <p>{{ sunriseSunsetInfo.nautical_twilight_end }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="solarNoon">Solar Noon:</h3>
+          <p>{{ sunriseSunsetInfo.solar_noon }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="sunrise">Sunrise:</h3>
+          <p>{{ sunriseSunsetInfo.sunrise }}</p>
+        </div>
+
+        <div class="p-field">
+          <h3 for="sunset">Sunset:</h3>
+          <p>{{ sunriseSunsetInfo.sunset }}</p>
+        </div>
+      </div>
+    </p-card>
+
+  </div>
+</div>
+<app-footer></app-footer>
