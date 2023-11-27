@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  toggleSidebar: any
   data!: any;
   max_length: number = 100;
   facts!: string;
@@ -42,6 +43,11 @@ export class HomepageComponent implements OnInit {
       this.loading = false
       this.onSubmit()
     }, 1000);
+  }
+  onDataUpdated(isOpen: any) {
+
+    this.toggleSidebar = isOpen
+
   }
   randomFacts() {
     this.serviceProxy.getReandomFacts(this.max_length).subscribe((res: any) => {

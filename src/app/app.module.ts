@@ -19,6 +19,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './AuthGuard/auth.guard';
 import { Routes } from '@angular/router';
 import { SpeedDialModule } from 'primeng/speeddial';
+import { SidebarModule } from 'primeng/sidebar';
+
 const routes: Routes = [
   // Your other routes...
 
@@ -48,7 +50,8 @@ const routes: Routes = [
     DialogModule,
     CardModule,
     HttpClientModule,
-    SpeedDialModule
+    SpeedDialModule,
+    SidebarModule
 
   ],
   providers: [],

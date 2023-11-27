@@ -1,5 +1,5 @@
+<app-nav-bar [name]="data" (newItemEvent)="onDataUpdated($event)"></app-nav-bar>
 <app-sidebar></app-sidebar>
-<app-nav-bar [name]="data"></app-nav-bar>
 <div class="content">
   <div class="widget">
     <p-card header="Facts" subheader="Click on button to generate random facts" [style]="{ width: '360px' }">
@@ -10,6 +10,7 @@
         {{facts}}
       </p>
       <ng-template pTemplate="footer">
+     
       </ng-template>
     </p-card>
     <p-card header="Fill form" subheader="" [style]="{ width: '360px', height: '350px'}">
@@ -19,19 +20,24 @@
             <label for="name">Latitude</label>
             <input class="form-control" id="Latitude" type="number" pInputText formControlName="Latitude"
               (blur)="onInputBlur('Latitude')" />
+            <!-- <div *ngIf="form.get('name').invalid && form.get('name').touched" class="error-text">Name is required</div> -->
           </div>
 
           <div class="p-field">
             <label for="email">Longitude</label>
             <input class="form-control" id="Longitude" type="number" pInputText formControlName="Longitude"
               (blur)="onInputBlur('Longitude')" />
+    
           </div>
           <div class="p-field">
             <label for="email">Date</label>
             <input class="form-control" id="Date" type="date" pInputText formControlName="Date"
               (blur)="onInputBlur('Date')" />
+    
           </div>
-          <p-button label="Submit" [loading]="loading" (onClick)="load()"></p-button>
+         
+          <p-button label="Submit" [disabled]="form.invalid" [loading]="loading" (onClick)="load()"></p-button>
+      
         </form>
 
       </div>

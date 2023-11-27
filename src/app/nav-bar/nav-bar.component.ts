@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { ProxyService } from '../proxy-service/proxy.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,6 +9,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  newItemEvent: boolean = true;
   visible: boolean = false;
   items: MenuItem[] | undefined;
   position: any = 'center';
@@ -15,11 +17,17 @@ export class NavBarComponent implements OnInit {
   name!: string;
   image: string = "assets/image/profile-1.jpg";
   isSearchActive = false;
-  constructor(private router: Router) { }
+  sidebarVisible: any = false;
+  constructor(private router: Router, private service: ProxyService) { }
   toggleSearch(): void {
     this.isSearchActive = !this.isSearchActive;
   }
+  hideBar() {
 
+    this.newItemEvent = !this.newItemEvent
+
+    this.service.setRes(this.newItemEvent)
+  }
   ngOnInit(): void {
   }
   showDialog(position: string) {

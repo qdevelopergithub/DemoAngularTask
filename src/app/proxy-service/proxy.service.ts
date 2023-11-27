@@ -44,7 +44,11 @@ export class ProxyService {
     }
     return false;
   }
-
+  curretRes = new BehaviorSubject<any | null>(null)
+  setRes(data: any) {
+  
+    this.curretRes.next(data)
+  }
   Authenticated(): boolean {
     if (localStorage.getItem("name") !== null) {
       return true;
